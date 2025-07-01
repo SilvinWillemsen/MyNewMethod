@@ -1,0 +1,8 @@
+[project]
+name = "My_New_Method"
+version = "0.1.0"
+description = "Dummy simulation method for CHORAS"
+
+[build-system]
+build-backend = "flit_core.buildapi"
+requires = ["flit_core >=3.2,<4"]
