@@ -21,8 +21,16 @@ def simulation_method (json_file_path=None):
     with open(json_file_path, 'r') as json_file:
         result_container = json.load(json_file)
 
-    prev_percent_done = 0
+    # Example on how to extract simulation-specific settings from the .json
+    simulation_settings = result_container["simulationSettings"]
+    
+    simulation_setting_1 = simulation_settings["mnm_1"]
+    simulation_setting_2 = simulation_settings["mnm_2"]
+    print(f"Simulation setting 1 = {simulation_setting_1}")
+    print(f"Simulation setting 2 = {simulation_setting_2}")
 
+    # Main simulation loop
+    prev_percent_done = 0
     simulation_length = 150
     for i in range(simulation_length):
         percent_done = round(i * 100 / simulation_length)
@@ -43,4 +51,4 @@ def simulation_method (json_file_path=None):
                             json.dumps(result_container, indent=4)
                         )
 
-        time.sleep (0.1)
+        time.sleep (0.01)
